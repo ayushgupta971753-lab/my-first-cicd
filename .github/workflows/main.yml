@@ -1,0 +1,19 @@
+name: Simple CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run a Simple Test
+        run: |
+          echo "GitHub Actions successfully connected!"
+          python --version
